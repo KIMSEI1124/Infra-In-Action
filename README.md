@@ -34,26 +34,3 @@ Docker을 사용하여 서버를 구성할 것 이며 무료버젼은 3대의 Ag
 ```shell
 sh up.sh
 ```
-
-## Troubleshooting
-
-### Permission Denied
-
----
-
-`teamcity` 특정 볼륨에 권한이 없어 실행이 안됬습니다.
-그래서 해당 컨테이너의 유저 권한을 `root`를 부여하였습니다.
-
-```yaml
-teamcity:
-  image: jetbrains/teamcity-server:2023.11.3
-  container_name: teamcity
-  # ...
-  user: root # 추가한 내용
-  depends_on:
-    - db
-```
-
-> 참고 자료
->
-> [Permission Denied](https://stackoverflow.com/questions/57724705/windows-docker-permission-denied-var-run-docker-sock?rq=2)
