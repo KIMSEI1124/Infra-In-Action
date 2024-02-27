@@ -6,6 +6,12 @@ Infra 공부 관련 코드들을 기록합니다.
 
 > teamcity/setup
 
+## jenkins
+
+| Title                                                                      | Date                    | Description                                              |
+|:---------------------------------------------------------------------------|:------------------------|:---------------------------------------------------------|
+| [setup](https://github.com/KIMSEI1124/infra_in_action/tree/jenkins/setup) | 2024.02.28 - ing | CI/CD 도구로 가장 많이 사용하고 있는 `jenkins`를 `docker`을 사용하여 설치합니다. | 
+
 ## teamcity
 
 | Title                                                                      | Date                    | Description                                              |
