@@ -1,0 +1,40 @@
+services:
+  nginx:
+    image: nginx:1.21.5-alpine
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf"
+    networks:
+      - nginx-network
+    depends_on:
+      - server-1
+      - server-2
+      - server-3
+  server-1:
+    image: workju1124/spring-nginx:0.0.1
+    container_name: server1
+    environment:
+      - PROFILE=server1
+    networks:
+      - nginx-network
+  server-2:
+    image: workju1124/spring-nginx:0.0.1
+    container_name: server2
+    environment:
+      - PROFILE=server2
+    networks:
+      - nginx-network
+  server-3:
+    image: workju1124/spring-nginx:0.0.1
+    container_name: server3
+    environment:
+      - PROFILE=server3
+    networks:
+      - nginx-network
+
+networks:
+  nginx-network:
+    driver: bridge

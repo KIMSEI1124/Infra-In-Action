@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: spring-1
+  config:
+    activate:
+      on-profile: server1
+---
+
+spring:
+  application:
+    name: spring-2
+  config:
+    activate:
+      on-profile: server2
+
+---
+
+spring:
+  application:
+    name: spring-3
+  config:
+    activate:
+      on-profile: server3
